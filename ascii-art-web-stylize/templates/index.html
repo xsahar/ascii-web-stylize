@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- The head section contains metadata and styles for the document -->
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sets the viewport width and initial scale for responsive design -->
+    <link rel="stylesheet" href="/style/main.css">
+    <!-- link between html and css file "main.css" -->
+    <title>Ascii Art Generator</title>
+</head>
+<body>
+    <h1>Ascii Art Generator</h1>
+    <hr>
+    <form method="post" action="/">
+        <div id="textareaDiv">
+        <textarea name="userText" id="userText" placeholder="Enter Text Here .."></textarea>
+        </div>
+        <div id="bannerDiv">
+        <h3 id="subtitleStyle">Choose Banner:</h3>
+        
+        <select name="bannerType">
+            <option value="Standard" selected>Standard</option>
+            <option value="Shadow">Shadow</option>
+            <option value="Thinkertoy">Thinkertoy</option>
+        </select>
+      
+        <div id="submitDiv">
+        <input type="submit" value="Submit">
+    </div>
+        </div>
+    </form>
+<br> <br><br><br>
+    <div class="container">
+        {{if .OutputArr}} <!-- Check if the .OutputArr variable has any content -->
+        <pre class="ascii-art">
+            {{range .OutputArr}}{{.}} <!-- Iterate over the elements in .OutputArr and display each element -->
+            {{end}}
+        </pre>
+        {{end}}
+    </div>
+</body>
+</html>
